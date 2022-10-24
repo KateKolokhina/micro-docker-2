@@ -1,9 +1,7 @@
 package com.example.spring2pr;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,11 @@ public class Controller {
     @GetMapping("/all")
     public List<User> getAll(){
         return userRepository.findAll();
+    }
+
+    @PostMapping
+    public String addNewUser(@RequestBody User user) {
+        userRepository.save(user);
+        return "Saved user";
     }
 }

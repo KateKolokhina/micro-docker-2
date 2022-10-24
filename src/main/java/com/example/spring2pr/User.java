@@ -1,12 +1,16 @@
 package com.example.spring2pr;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
     @Id
